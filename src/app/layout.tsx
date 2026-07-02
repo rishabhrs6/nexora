@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   publisher: "Nexora",
 
   verification: {
-    google: "so46b6IrvMoSzzNauhthz4ZLKjVmY3C3ItBiufoUSm",
+    google: "so46b6IrvMoSzzNauhthz4ZLKjVmY3C3ItBiufoUSms",
   },
 
   robots: {
