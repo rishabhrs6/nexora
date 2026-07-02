@@ -23,44 +23,36 @@ const data = [
 export default function LiveGraph() {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 25 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: .7 }}
+      transition={{ duration: 0.6 }}
       className="mt-5 rounded-[24px] border border-cyan-500/20 bg-gradient-to-br from-[#0b1220] to-[#0d1628] p-4 md:mt-6 md:rounded-3xl md:p-6"
     >
       {/* Header */}
 
       <div className="flex items-center justify-between">
-
         <div>
-
           <p className="text-xs text-cyan-400 md:text-sm">
             AI Growth Engine
           </p>
 
-          <h2 className="mt-1 text-xl font-black text-white md:mt-2 md:text-3xl">
+          <h2 className="mt-2 text-xl font-black text-white md:text-3xl">
             Revenue Growth
           </h2>
-
         </div>
 
-        <div className="rounded-full bg-green-500/20 px-3 py-1 text-xs font-semibold text-green-400 md:px-4 md:py-2 md:text-sm">
+        <div className="rounded-full bg-green-500/20 px-4 py-2 text-xs font-semibold text-green-400 md:text-sm">
           +247%
         </div>
-
       </div>
 
       {/* Chart */}
 
-      <div className="mt-6 h-48 md:mt-8 md:h-72">
-
-        <ResponsiveContainer>
-
+      <div className="mt-8 h-48 md:h-72">
+        <ResponsiveContainer width="100%" height="100%">
           <AreaChart data={data}>
-
             <defs>
-
               <linearGradient
                 id="gradient"
                 x1="0"
@@ -71,7 +63,7 @@ export default function LiveGraph() {
                 <stop
                   offset="0%"
                   stopColor="#22d3ee"
-                  stopOpacity={0.8}
+                  stopOpacity={0.65}
                 />
 
                 <stop
@@ -79,42 +71,34 @@ export default function LiveGraph() {
                   stopColor="#22d3ee"
                   stopOpacity={0}
                 />
-
               </linearGradient>
-
             </defs>
 
             <Tooltip
               contentStyle={{
                 background: "#07111f",
                 border: "none",
-                borderRadius: "14px",
+                borderRadius: "12px",
                 color: "white",
               }}
             />
 
             <Area
-              isAnimationActive
-              animationDuration={2200}
+              isAnimationActive={false}
               type="monotone"
               dataKey="value"
               stroke="#22d3ee"
               strokeWidth={3}
               fill="url(#gradient)"
             />
-
           </AreaChart>
-
         </ResponsiveContainer>
-
       </div>
 
-      {/* Stats */}
+      {/* Bottom Stats */}
 
       <div className="mt-6 grid grid-cols-3 gap-4 text-center">
-
         <div>
-
           <p className="text-[11px] text-gray-400 md:text-sm">
             Revenue
           </p>
@@ -122,11 +106,9 @@ export default function LiveGraph() {
           <h3 className="mt-1 text-lg font-bold text-white md:text-2xl">
             ₹12.4L
           </h3>
-
         </div>
 
         <div>
-
           <p className="text-[11px] text-gray-400 md:text-sm">
             AI Leads
           </p>
@@ -134,11 +116,9 @@ export default function LiveGraph() {
           <h3 className="mt-1 text-lg font-bold text-white md:text-2xl">
             2,846
           </h3>
-
         </div>
 
         <div>
-
           <p className="text-[11px] text-gray-400 md:text-sm">
             Automation
           </p>
@@ -146,11 +126,8 @@ export default function LiveGraph() {
           <h3 className="mt-1 text-lg font-bold text-white md:text-2xl">
             99.9%
           </h3>
-
         </div>
-
       </div>
-
     </motion.div>
   );
 }
