@@ -24,7 +24,10 @@ export async function sendEmail(formData: {
   message: string;
 }) {
   console.log("========== SEND EMAIL START ==========");
-  console.log("ENV KEY EXISTS:", !!process.env.RESEND_API_KEY);
+  console.log(
+    "ENV KEY EXISTS:",
+    !!process.env.RESEND_API_KEY
+  );
 
   try {
     const data = contactSchema.parse(formData);
@@ -61,4 +64,4 @@ export async function sendEmail(formData: {
       error: String(error),
     };
   }
-}
+} 
