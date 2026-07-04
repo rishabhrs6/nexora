@@ -8,11 +8,12 @@ import { Menu, X, ArrowUpRight } from "lucide-react";
 
 const navLinks = [
   { name: "About", href: "/about" },
-  { name: "Services", href: "#services" },
-  { name: "Process", href: "#process" },
-  { name: "Pricing", href: "#pricing" },
-  { name: "FAQ", href: "#faq" },
-  { name: "Contact", href: "#contact" },
+  { name: "AI Receptionist", href: "/ai-receptionist" },
+  { name: "Services", href: "/#services" },
+  { name: "Process", href: "/#process" },
+  { name: "Pricing", href: "/#pricing" },
+  { name: "FAQ", href: "/#faq" },
+  { name: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {
@@ -22,8 +23,6 @@ export default function Navbar() {
     <>
       <header className="fixed left-0 right-0 top-0 z-50">
         <div className="mx-auto mt-4 flex w-[94%] max-w-7xl items-center justify-between rounded-2xl border border-white/10 bg-black/40 px-6 py-4 backdrop-blur-2xl">
-
-          {/* Logo */}
 
           <Link href="/" className="flex items-center">
             <Image
@@ -36,9 +35,7 @@ export default function Navbar() {
             />
           </Link>
 
-          {/* Desktop Navigation */}
-
-          <nav className="hidden items-center gap-10 lg:flex">
+          <nav className="hidden items-center gap-8 lg:flex">
             {navLinks.map((item) => (
               <Link
                 key={item.name}
@@ -52,17 +49,13 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* Desktop CTA */}
-
-          <a
-            href="#contact"
+          <Link
+            href="/#contact"
             className="hidden items-center gap-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 px-6 py-3 font-semibold text-white shadow-lg shadow-cyan-500/20 transition hover:scale-105 lg:flex"
           >
             Book Free Call
             <ArrowUpRight size={18} />
-          </a>
-
-          {/* Mobile Toggle */}
+          </Link>
 
           <button
             onClick={() => setOpen(!open)}
@@ -74,8 +67,6 @@ export default function Navbar() {
 
         </div>
       </header>
-
-      {/* Mobile Menu */}
 
       <AnimatePresence>
         {open && (
@@ -109,13 +100,13 @@ export default function Navbar() {
                 </Link>
               ))}
 
-              <a
-                href="#contact"
+              <Link
+                href="/#contact"
                 onClick={() => setOpen(false)}
                 className="inline-block rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 px-8 py-4 font-semibold text-white"
               >
                 Book Free Call
-              </a>
+              </Link>
 
             </div>
           </motion.div>

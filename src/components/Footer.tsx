@@ -1,19 +1,21 @@
 "use client";
 
 import Image from "next/image";
-import { Mail, MapPin } from "lucide-react";
+import Link from "next/link";
+import { Mail, Phone, MapPin } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function Footer() {
   return (
     <footer className="border-t border-white/10 bg-[#050816]">
-      <div className="mx-auto max-w-7xl px-6 py-16">
+      <div className="mx-auto max-w-7xl px-6 py-20">
 
-        <div className="grid gap-12 md:grid-cols-3">
+        <div className="grid gap-14 md:grid-cols-2 lg:grid-cols-4">
 
           {/* Brand */}
 
           <div>
+
             <Image
               src="/logo.png"
               alt="Nexora"
@@ -22,83 +24,108 @@ export default function Footer() {
               className="h-12 w-auto"
             />
 
-            <p className="mt-6 max-w-sm leading-7 text-gray-400">
-              Nexora helps businesses grow through premium websites,
-              AI automation, SEO and digital growth systems built for
-              modern brands.
+            <p className="mt-6 leading-8 text-gray-400">
+              Nexora is an AI Automation company helping businesses grow using
+              AI Receptionists, AI Calling, WhatsApp Automation, Premium
+              Websites and SEO.
             </p>
+
           </div>
 
-          {/* Quick Links */}
+          {/* Services */}
 
           <div>
-            <h3 className="text-lg font-bold text-white">
-              Quick Links
+
+            <h3 className="text-xl font-semibold text-white">
+              Services
             </h3>
 
             <div className="mt-6 flex flex-col gap-4">
 
-              <a
-                href="#services"
-                className="text-gray-400 transition hover:text-cyan-400"
-              >
+              <Link href="/ai-receptionist" className="text-gray-400 hover:text-cyan-400">
+                AI Receptionist
+              </Link>
+
+              <Link href="/website-development" className="text-gray-400 hover:text-cyan-400">
+                Website Development
+              </Link>
+
+              <Link href="/seo-for-dental-clinics" className="text-gray-400 hover:text-cyan-400">
+                Dental SEO
+              </Link>
+
+              <Link href="/whatsapp-automation" className="text-gray-400 hover:text-cyan-400">
+                WhatsApp Automation
+              </Link>
+
+              <Link href="/ai-calling" className="text-gray-400 hover:text-cyan-400">
+                AI Calling
+              </Link>
+
+            </div>
+
+          </div>
+
+          {/* Company */}
+
+          <div>
+
+            <h3 className="text-xl font-semibold text-white">
+              Company
+            </h3>
+
+            <div className="mt-6 flex flex-col gap-4">
+
+              <Link href="/" className="text-gray-400 hover:text-cyan-400">
+                Home
+              </Link>
+
+              <Link href="/services" className="text-gray-400 hover:text-cyan-400">
                 Services
-              </a>
+              </Link>
 
-              <a
-                href="#process"
-                className="text-gray-400 transition hover:text-cyan-400"
-              >
-                Process
-              </a>
+              <Link href="/privacy-policy" className="text-gray-400 hover:text-cyan-400">
+                Privacy Policy
+              </Link>
 
-              <a
-                href="#pricing"
-                className="text-gray-400 transition hover:text-cyan-400"
-              >
-                Pricing
-              </a>
+              <Link href="/terms" className="text-gray-400 hover:text-cyan-400">
+                Terms & Conditions
+              </Link>
 
-              <a
-                href="#faq"
-                className="text-gray-400 transition hover:text-cyan-400"
-              >
-                FAQ
-              </a>
-
-              <a
-                href="#contact"
-                className="text-gray-400 transition hover:text-cyan-400"
-              >
+              <a href="/#contact" className="text-gray-400 hover:text-cyan-400">
                 Contact
               </a>
 
             </div>
+
           </div>
 
           {/* Contact */}
 
           <div>
 
-            <h3 className="text-lg font-bold text-white">
+            <h3 className="text-xl font-semibold text-white">
               Contact
             </h3>
 
             <div className="mt-6 space-y-5">
 
               <div className="flex items-center gap-3 text-gray-400">
-                <Mail className="text-cyan-400" size={18} />
+                <Mail size={18} className="text-cyan-400" />
                 <span>rishabhsharmx1@gmail.com</span>
               </div>
 
               <div className="flex items-center gap-3 text-gray-400">
-                <MapPin className="text-cyan-400" size={18} />
+                <Phone size={18} className="text-cyan-400" />
+                <span>+91 8447410623</span>
+              </div>
+
+              <div className="flex items-center gap-3 text-gray-400">
+                <MapPin size={18} className="text-cyan-400" />
                 <span>Delhi, India</span>
               </div>
 
             </div>
-
-            {/* Social Icons */}
 
             <div className="mt-8 flex gap-4">
 
@@ -106,8 +133,7 @@ export default function Footer() {
                 href="https://github.com/rishabhrs6"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="GitHub"
-                className="rounded-full border border-white/10 p-3 text-xl text-white transition hover:border-cyan-400 hover:bg-cyan-500/10 hover:text-cyan-400"
+                className="rounded-full border border-white/10 p-3 text-white transition hover:border-cyan-400 hover:text-cyan-400"
               >
                 <FaGithub />
               </a>
@@ -116,8 +142,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/in/rishabh-sharma-17a05341b/"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="rounded-full border border-white/10 p-3 text-xl text-white transition hover:border-cyan-400 hover:bg-cyan-500/10 hover:text-cyan-400"
+                className="rounded-full border border-white/10 p-3 text-white transition hover:border-cyan-400 hover:text-cyan-400"
               >
                 <FaLinkedin />
               </a>
@@ -128,12 +153,8 @@ export default function Footer() {
 
         </div>
 
-        {/* Bottom */}
-
-        <div className="mt-14 border-t border-white/10 pt-8 text-center text-gray-500">
-
+        <div className="mt-16 border-t border-white/10 pt-8 text-center text-sm text-gray-500">
           © {new Date().getFullYear()} Nexora. All Rights Reserved.
-
         </div>
 
       </div>

@@ -1,31 +1,51 @@
 import type { Metadata } from "next";
-// Removed import of @next/third-parties/google because it's not available in this environment.
-// We'll insert the Google Analytics script manually below.
 import "./globals.css";
+
 import GoogleAnalytics from "../components/GoogleAnalytics";
+
+import OrganizationSchema from "@/components/seo/OrganizationSchema";
+import WebsiteSchema from "@/components/seo/WebsiteSchema";
+import LocalBusinessSchema from "@/components/seo/LocalBusinessSchema";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://heynexora.in"),
 
   title: {
-    default: "Nexora | AI Automation & Web Development Agency",
+    default: "Nexora | AI Automation Company for Businesses",
     template: "%s | Nexora",
   },
 
   description:
-    "Nexora helps businesses grow with AI Automation, Premium Websites, SEO, Lead Generation and Digital Growth Systems.",
+    "Nexora helps businesses grow with AI Receptionists, AI Calling, WhatsApp Automation, Premium Websites, SEO and Business Automation.",
+
+  applicationName: "Nexora",
+
+  category: "Technology",
+
+  referrer: "origin-when-cross-origin",
 
   keywords: [
     "Nexora",
+    "Hey Nexora",
+    "Nexora AI",
+    "Nexora Company",
     "AI Automation",
-    "AI Agency",
-    "Web Development",
+    "AI Receptionist",
+    "AI Calling",
+    "AI Voice Agent",
+    "WhatsApp Automation",
+    "CRM",
     "Website Development",
+    "Website Design",
+    "Web Development Company",
     "SEO",
+    "Local SEO",
+    "Dental SEO",
+    "Dental Marketing",
+    "Business Automation",
     "Lead Generation",
-    "Dental Websites",
-    "AI Chatbot",
-    "Next.js",
+    "Digital Marketing",
+    "Artificial Intelligence",
   ],
 
   authors: [
@@ -38,6 +58,10 @@ export const metadata: Metadata = {
 
   publisher: "Nexora",
 
+  alternates: {
+    canonical: "/",
+  },
+
   verification: {
     google: "NV42UrqVn-tO8ELMqbRmpmOOvD6GQ707yK3T1EgW6nk",
   },
@@ -45,6 +69,7 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+
     googleBot: {
       index: true,
       follow: true,
@@ -55,9 +80,10 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Nexora | AI Automation & Web Development",
+    title: "Nexora | AI Automation Company",
+
     description:
-      "Premium websites, AI automation and growth systems built to scale businesses.",
+      "AI Receptionists, AI Calling, WhatsApp Automation, SEO, Premium Websites and Business Automation.",
 
     url: "https://heynexora.in",
 
@@ -72,7 +98,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Nexora",
+        alt: "Nexora AI Automation Company",
       },
     ],
   },
@@ -80,10 +106,10 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
 
-    title: "Nexora",
+    title: "Nexora | AI Automation Company",
 
     description:
-      "AI Automation • Premium Websites • SEO • Lead Generation",
+      "AI Receptionists • AI Calling • Websites • SEO • WhatsApp Automation",
 
     images: ["/og-image.png"],
   },
@@ -95,51 +121,25 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-
-  "@type": "Organization",
-
-  name: "Nexora",
-
-  url: "https://heynexora.in",
-
-  logo: "https://heynexora.in/logo.png",
-
-  description:
-    "Nexora helps businesses grow with AI automation, premium websites, SEO and intelligent growth systems.",
-
-  founder: {
-    "@type": "Person",
-    name: "Rishabh Sharma",
-  },
-
-  email: "rishabhsharmx1@gmail.com",
-
-  sameAs: [
-    "https://github.com/rishabhrs6",
-    "https://www.linkedin.com/in/rishabh-sharma-17a05341b/",
-  ],
-};
-
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(jsonLd),
-          }}
-        />
+
+        <OrganizationSchema />
+
+        <WebsiteSchema />
+
+        <LocalBusinessSchema />
 
         {children}
 
         <GoogleAnalytics gaId="G-2NG0NPXKF3" />
+
       </body>
     </html>
   );
