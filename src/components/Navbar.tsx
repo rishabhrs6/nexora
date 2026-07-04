@@ -1,11 +1,13 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 
 const navLinks = [
+  { name: "About", href: "/about" },
   { name: "Services", href: "#services" },
   { name: "Process", href: "#process" },
   { name: "Pricing", href: "#pricing" },
@@ -23,10 +25,7 @@ export default function Navbar() {
 
           {/* Logo */}
 
-          <a
-            href="#hero"
-            className="flex items-center"
-          >
+          <Link href="/" className="flex items-center">
             <Image
               src="/logo.png"
               alt="Nexora"
@@ -35,13 +34,13 @@ export default function Navbar() {
               priority
               className="h-10 w-auto object-contain"
             />
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
 
           <nav className="hidden items-center gap-10 lg:flex">
             {navLinks.map((item) => (
-              <a
+              <Link
                 key={item.name}
                 href={item.href}
                 className="group relative text-gray-300 transition hover:text-white"
@@ -49,7 +48,7 @@ export default function Navbar() {
                 {item.name}
 
                 <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-cyan-400 transition-all duration-300 group-hover:w-full" />
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -68,6 +67,7 @@ export default function Navbar() {
           <button
             onClick={() => setOpen(!open)}
             className="text-white lg:hidden"
+            aria-label="Toggle navigation"
           >
             {open ? <X size={30} /> : <Menu size={30} />}
           </button>
@@ -99,14 +99,14 @@ export default function Navbar() {
               </div>
 
               {navLinks.map((item) => (
-                <a
+                <Link
                   key={item.name}
                   href={item.href}
                   onClick={() => setOpen(false)}
                   className="block text-3xl font-bold text-white transition hover:text-cyan-400"
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
 
               <a
