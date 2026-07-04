@@ -14,8 +14,8 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
 
-    sitemap: "https://nexora.vercel.app/sitemap.xml",
+    sitemap: "https://heynexora.in/sitemap.xml",
 
-    host: "https://nexora.vercel.app",
+    host: "https://heynexora.in",
   };
 }
