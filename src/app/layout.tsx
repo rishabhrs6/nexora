@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nexora-sepia-zeta.vercel.app"),
+  metadataBase: new URL("https://heynexora.in"),
 
   title: {
     default: "Nexora | AI Automation & Web Development Agency",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   publisher: "Nexora",
 
   verification: {
-    google: "so46b6IrvMoSzzNauhthz4ZLKjVmY3C3ItBiufoUSms",
+    google: "NV42UrqVn-tO8ELMqbRmpmOOvD6GQ707yK3T1EgW6nk",
   },
 
   robots: {
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     title: "Nexora | AI Automation & Web Development",
     description:
       "Premium websites, AI automation and growth systems built to scale businesses.",
-    url: "https://nexora-sepia-zeta.vercel.app",
+    url: "https://heynexora.in",
     siteName: "Nexora",
     locale: "en_US",
     type: "website",
@@ -82,8 +82,8 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Nexora",
-  url: "https://nexora-sepia-zeta.vercel.app",
-  logo: "https://nexora-sepia-zeta.vercel.app/logo.png",
+  url: "https://heynexora.in",
+  logo: "https://heynexora.in/logo.png",
 
   founder: {
     "@type": "Person",
